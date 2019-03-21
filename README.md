@@ -49,6 +49,8 @@ sqlplus sys/Oradoc_db1@ORCLCDB as sysdba
 alter session set "_ORACLE_SCRIPT"=true;
 CREATE USER loja IDENTIFIED BY loja_senha;
 GRANT connect,resource TO loja;
+ALTER USER loja QUOTA 100M ON USERS  
+GRANT UNLIMITED TABLESPACE TO loja
 exit;
 exit;
 ```
