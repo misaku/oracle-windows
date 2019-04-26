@@ -47,9 +47,11 @@ docker exec -it nome-container bash
 //com esse comando vc consegue entrar na maquina e depois só usar p sqlplus
 sqlplus sys/Oradoc_db1@ORCLCDB as sysdba
 alter session set "_ORACLE_SCRIPT"=true;
+set serveroutput on size unlimited;
+set serveroutput on;
 CREATE USER loja IDENTIFIED BY loja_senha;
 GRANT connect,resource TO loja;
-ALTER USER loja QUOTA 100M ON USERS  
+ALTER USER loja QUOTA 100M ON USERS;  
 GRANT UNLIMITED TABLESPACE TO loja
 exit;
 exit;
